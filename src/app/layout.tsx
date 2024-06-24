@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.className} min-w-[350px] px-10 lg:px-48 `}>
+      <body className={`${lato.className} min-w-[350px] `}>
         <Navbar />
         {children}
       </body>
