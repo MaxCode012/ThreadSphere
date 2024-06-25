@@ -16,6 +16,8 @@ const config: Config = {
       colors: {
         container: "#121620",
         hover: "#151a26",
+        main: "#0c97d2",
+        shadowCol: "#125D7D",
       },
     },
   },

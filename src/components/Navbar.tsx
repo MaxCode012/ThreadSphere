@@ -56,7 +56,7 @@ export default function Navbar() {
         </div>
         <div className="relative flex items-center">
           <button
-            className="translate-x-14"
+            className="lg:translate-x-14"
             onClick={() => setOptionsToggled(!optionsToggled)}
           >
             {optionsToggled ? (
@@ -71,10 +71,10 @@ export default function Navbar() {
               className="absolute right-0 mt-2 w-48 bg-container shadow-lg rounded-lg py-2 z-50"
             >
               <Link
-                href="/login"
+                href="/signin"
                 className="block px-4 py-2 text-white hover:bg-hover"
               >
-                Log In
+                Sign in
               </Link>
               <button className="block w-full text-left px-4 py-2 text-white hover:bg-hover">
                 Toggle Light Theme
