@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function SignIn() {
   return (
-    <main className="lg:px-60 px-11 lg:flex lg:justify-between">
-      <div className="mt-24 space-y-[45px]">
+    <main className="lg:px-60 px-11 lg:flex ">
+      <div className="mt-24 space-y-[45px] lg:mr-auto">
         <h1 className="text-4xl lg:text-5xl font-bold text-center lg:text-left">
           Hey, <br />
           Welcome back
@@ -16,18 +16,18 @@ export default function SignIn() {
             <input
               type="email"
               placeholder="email"
-              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-main transition:focus duration-200"
+              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black transition:focus dark:focus:border-main duration-200"
             />
             <input
               type="password"
               placeholder="password"
-              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-main transition:focus duration-200"
+              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
           </div>
           <MainButton className="w-full lg:w-auto">Sign in</MainButton>
-          <div className="text-sm text-gray-300 mt-6 flex justify-between">
-            <p className="">Don't have an account?</p>
-            <span className="text-main">
+          <div className="text-sm dark:text-gray-300 text-gray-500 mt-6 flex justify-between">
+            <p className="">Don&apos;t have an account?</p>
+            <span className="text-black dark:text-main">
               <Link href="/signup">sign up</Link>
             </span>
           </div>

@@ -16,23 +16,23 @@ export default function SignUp() {
             <input
               type="text"
               placeholder="username"
-              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-main transition:focus duration-200"
+              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
             <input
               type="email"
               placeholder="email"
-              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-main transition:focus duration-200"
+              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
             <input
               type="password"
               placeholder="password"
-              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-main transition:focus duration-200"
+              className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
           </div>
           <MainButton className="w-full lg:w-auto">Sign up</MainButton>
-          <div className="text-sm text-gray-300 mt-6 flex justify-between">
+          <div className="text-sm dark:text-gray-300 text-gray-500 mt-6 flex justify-between">
             <p className="">Already have an account?</p>
-            <span className="text-main">
+            <span className="dark:text-main text-black">
               <Link href="/signin">sign in</Link>
             </span>
           </div>

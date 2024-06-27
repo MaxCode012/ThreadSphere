@@ -1,9 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { CircleEllipsis, CircleHelp, Earth, Layers, X } from "lucide-react";
+import {
+  CircleEllipsis,
+  CircleHelp,
+  Earth,
+  Layers,
+  X,
+  Circle,
+} from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import ThemeSwitch from "./ThemeSwitch";
+import { BsCircleFill } from "react-icons/bs";
 
 export default function Navbar() {
   const [optionsToggled, setOptionsToggled] = useState(false);
@@ -26,15 +34,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="shadow-gray-700 shadow-sm px-10 lg:px-48 ">
+    <header className="dark:shadow-gray-700 shadow-sm px-10 lg:px-48 ">
       <nav className="max-w-5xl py-5 flex items-center justify-between">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex justify-center items-center space-x-1">
-            <Image src={"/logo.png"} width={20} height={20} alt="logo" />
+            <BsCircleFill width={20} />
             <span className="uppercase">ThreadSphere</span>
           </Link>
         </div>
-        <div className="flex justify-between items-center space-x-4">
+        <div className="justify-between items-center space-x-4 hidden md:flex lg:flex">
           <Link href="/" className="flex justify-center items-center space-x-1">
             <Layers height={19} />
             <span className="text-md">Posts</span>
@@ -68,16 +76,16 @@ export default function Navbar() {
           {optionsToggled && (
             <div
               ref={dropdownRef}
-              className="absolute right-0 mt-2 w-48 bg-container shadow-lg rounded-lg py-2 z-50"
+              className="absolute right-0 mt-2 w-48 dark:bg-container bg-white shadow-lg rounded-lg py-2 z-50"
             >
               <Link
                 href="/signin"
-                className="block px-4 py-2 text-white hover:bg-hover"
+                className="block px-4 py-2 dark:text-white text-black dark:hover:bg-hover hover:bg-gray-200"
               >
                 Sign in
               </Link>
-              <button className="block w-full text-left px-4 py-2 text-white hover:bg-hover">
-                Toggle Light Theme
+              <button className="block w-full text-left px-4 py-2 dark:text-white text-black dark:hover:bg-hover hover:bg-gray-200">
+                <ThemeSwitch />
               </button>
             </div>
           )}
