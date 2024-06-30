@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function SignUp() {
+  const errors = {};
+
   return (
     <main className="lg:px-60 px-11 lg:flex lg:justify-between">
       <div className="mt-24 space-y-[45px]">

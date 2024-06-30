@@ -12,6 +12,7 @@ import {
 import { useState, useEffect, useRef } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { BsCircleFill } from "react-icons/bs";
+import OptionsContainer from "./OptionsContainer";
 
 export default function Navbar() {
   const [optionsToggled, setOptionsToggled] = useState(false);
@@ -73,22 +74,7 @@ export default function Navbar() {
               <CircleEllipsis height={20} />
             )}
           </button>
-          {optionsToggled && (
-            <div
-              ref={dropdownRef}
-              className="absolute right-0 mt-2 w-48 dark:bg-container bg-white shadow-lg rounded-lg py-2 z-50"
-            >
-              <Link
-                href="/signin"
-                className="block px-4 py-2 dark:text-white text-black dark:hover:bg-hover hover:bg-gray-200"
-              >
-                Sign in
-              </Link>
-              <button className="block w-full text-left px-4 py-2 dark:text-white text-black dark:hover:bg-hover hover:bg-gray-200">
-                <ThemeSwitch />
-              </button>
-            </div>
-          )}
+          {optionsToggled && <OptionsContainer dropdownRef={dropdownRef} />}
         </div>
       </nav>
     </header>
