@@ -3,6 +3,10 @@ import MainButton from "@/components/MainButton";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Sign In",
+};
+
 export default function SignIn() {
   return (
     <main className="lg:px-60 px-11 lg:flex ">

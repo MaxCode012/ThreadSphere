@@ -1,11 +1,13 @@
+import { signup } from "@/actions/auth-actions";
 import MainButton from "@/components/MainButton";
 
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Sign Up",
+};
 export default function SignUp() {
-  const errors = {};
-
   return (
     <main className="lg:px-60 px-11 lg:flex lg:justify-between">
       <div className="mt-24 space-y-[45px]">
@@ -13,7 +15,7 @@ export default function SignUp() {
           Hey, <br />
           Welcome back
         </h1>
-        <form action="" className="max-w-[275px] mx-auto lg:mx-0">
+        <form action={signup} className="max-w-[275px] mx-auto lg:mx-0">
           <div className="flex flex-col gap-5 mb-9">
             <input
               type="text"
