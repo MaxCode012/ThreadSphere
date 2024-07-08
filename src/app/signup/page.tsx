@@ -22,18 +22,21 @@ export default function SignUp() {
               type="text"
               placeholder="username"
               name="name"
+              required
               className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
             <input
               type="email"
               placeholder="email"
               name="email"
+              required
               className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
             <input
               type="password"
               placeholder="password"
               name="password"
+              required
               className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
           </div>
