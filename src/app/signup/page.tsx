@@ -7,6 +7,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Sign Up",
 };
+
 export default function SignUp() {
   return (
     <main className="lg:px-60 px-11 lg:flex lg:justify-between">
