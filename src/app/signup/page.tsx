@@ -20,16 +20,19 @@ export default function SignUp() {
             <input
               type="text"
               placeholder="username"
+              name="name"
               className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
             <input
               type="email"
               placeholder="email"
+              name="email"
               className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
             <input
               type="password"
               placeholder="password"
+              name="password"
               className="bg-transparent outline-none focus:outline-none border-b border-gray-200 focus:border-black dark:focus:border-main transition:focus duration-200"
             />
           </div>
