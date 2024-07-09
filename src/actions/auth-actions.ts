@@ -2,8 +2,8 @@
 
 import { lucia } from "@/lib/lucia";
 import { prisma } from "@/lib/prisma";
+import { redirect } from "next/dist/server/api-utils";
 import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
 import { Argon2id } from "oslo/password";
 
 export async function signup(formData: FormData) {
@@ -12,7 +12,7 @@ export async function signup(formData: FormData) {
   const password = formData.get("password")?.toString();
 
   if (!name || !email || !password) {
-    throw Error("Missing required fields");
+    return { success: false, message: "Missing required fields" };
   }
 
   const existingUser = await prisma.user.findUnique({
@@ -22,7 +22,7 @@ export async function signup(formData: FormData) {
   });
 
   if (existingUser) {
-    throw Error("User already exists");
+    return { success: false, message: "User already exists" };
   }
 
   const hashedPassword = await new Argon2id().hash(password);
@@ -43,6 +43,5 @@ export async function signup(formData: FormData) {
     sessionCookie.value,
     sessionCookie.attributes
   );
-  redirect("/");
-  return { success: true };
+  return { success: true, message: "Successfully signed up" };
 }

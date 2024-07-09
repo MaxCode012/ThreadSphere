@@ -3,6 +3,7 @@ import { Lato } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
+import { Toaster } from "react-hot-toast";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <Toaster position="bottom-right" />
         </Providers>
       </body>
     </html>
