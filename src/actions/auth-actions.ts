@@ -1,8 +1,9 @@
 "use server";
 
-import { lucia } from "@/lib/lucia";
+import { destroySession, lucia } from "@/lib/lucia";
 import { prisma } from "@/lib/prisma";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { Argon2id } from "oslo/password";
 
 export async function signup(formData: FormData) {
@@ -80,4 +81,9 @@ export async function signin(formData: FormData) {
     sessionCookie.attributes
   );
   return { success: true, message: "Successfully signed in" };
+}
+
+export default async function logout() {
+  await destroySession();
+  return redirect("/signin");
 }
