@@ -2,7 +2,6 @@
 
 import { lucia } from "@/lib/lucia";
 import { prisma } from "@/lib/prisma";
-import { redirect } from "next/dist/server/api-utils";
 import { cookies } from "next/headers";
 import { Argon2id } from "oslo/password";
 
@@ -44,4 +43,41 @@ export async function signup(formData: FormData) {
     sessionCookie.attributes
   );
   return { success: true, message: "Successfully signed up" };
+}
+
+export async function signin(formData: FormData) {
+  const email = formData.get("email")?.toString();
+  const password = formData.get("password")?.toString();
+
+  if (!email || !password) {
+    return { success: false, message: "Missing required fields" };
+  }
+
+  const user = await prisma.user.findUnique({
+    where: {
+      email: email,
+    },
+  });
+  if (!user || !user.hashedPassword) {
+    return { success: false, message: "Invalid credentials" };
+  }
+
+  const passwordMatch = await new Argon2id().verify(
+    user.hashedPassword,
+    password
+  );
+
+  if (!passwordMatch) {
+    return { success: false, message: "Invalid credentials" };
+  }
+
+  const session = await lucia.createSession(user.id, {});
+  const sessionCookie = await lucia.createSessionCookie(session.id);
+
+  cookies().set(
+    sessionCookie.name,
+    sessionCookie.value,
+    sessionCookie.attributes
+  );
+  return { success: true, message: "Successfully signed in" };
 }
