@@ -1,12 +1,19 @@
 import SignInForm from "@/components/forms/SignInForm";
+import { verifyAuth } from "@/lib/lucia";
 
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "Sign In",
 };
 
-export default function SignIn() {
+export default async function SignIn() {
+  const { user } = await verifyAuth();
+  if (user) {
+    return redirect("/");
+  }
+
   return (
     <main className="lg:px-60 px-11 lg:flex ">
       <div className="mt-24 space-y-[45px] lg:mr-auto">

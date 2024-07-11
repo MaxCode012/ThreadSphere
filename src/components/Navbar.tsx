@@ -1,14 +1,9 @@
+// components/Navbar.js
+
 "use client";
 
 import Link from "next/link";
-import {
-  CircleEllipsis,
-  CircleHelp,
-  Earth,
-  Layers,
-  X,
-  Circle,
-} from "lucide-react";
+import { CircleEllipsis, CircleHelp, Earth, Layers, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { BsCircleFill } from "react-icons/bs";
@@ -46,7 +41,7 @@ export default function Navbar() {
         <div className="justify-between items-center space-x-4 hidden md:flex lg:flex">
           <Link href="/" className="flex justify-center items-center space-x-1">
             <Layers height={19} />
-            <span className="text-md">Posts</span>
+            <span className="text-md">Feed</span>
           </Link>
           <Link
             href="/news"

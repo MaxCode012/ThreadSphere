@@ -1,12 +1,9 @@
-import { verifyAuth } from "@/lib/lucia";
-import { redirect } from "next/navigation";
+import LogOutButton from "@/components/LogOutButton";
 
-export default async function Home() {
-  const result = await verifyAuth();
-
-  if (!result.user) {
-    return redirect("/signin");
-  }
-
-  return <main>App</main>;
+export default function Home() {
+  return (
+    <main>
+      <LogOutButton />
+    </main>
+  );
 }
