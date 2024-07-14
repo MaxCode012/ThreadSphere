@@ -1,5 +1,5 @@
 import SignInForm from "@/components/forms/SignInForm";
-import { verifyAuth } from "@/lib/lucia";
+import { getUser } from "@/lib/lucia";
 
 import Image from "next/image";
 import { redirect } from "next/navigation";
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default async function SignIn() {
-  const { user } = await verifyAuth();
+  const user = await getUser();
   if (user) {
     return redirect("/");
   }
