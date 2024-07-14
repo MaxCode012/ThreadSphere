@@ -1,5 +1,3 @@
-// components/OptionsContainer.js
-
 import Link from "next/link";
 import ThemeSwitch from "./ThemeSwitch";
 

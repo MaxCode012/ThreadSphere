@@ -1,11 +1,8 @@
-// components/Navbar.js
-
 "use client";
 
 import Link from "next/link";
 import { CircleEllipsis, CircleHelp, Earth, Layers, X } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
-import ThemeSwitch from "./ThemeSwitch";
 import { BsCircleFill } from "react-icons/bs";
 import OptionsContainer from "./OptionsContainer";
 
@@ -30,7 +27,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="dark:shadow-gray-700 shadow-sm px-10 lg:px-48 ">
+    <header className="dark:shadow-blue-400/20 dark:shadow-sm shadow px-10 lg:px-48 ">
       <nav className="max-w-5xl py-5 flex items-center justify-between">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex justify-center items-center space-x-1">

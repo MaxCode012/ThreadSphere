@@ -1,9 +1,9 @@
-import LogOutButton from "@/components/LogOutButton";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function Home() {
   return (
-    <main>
-      <LogOutButton />
+    <main className="lg:px-48 px-11 flex">
+      <ProfileCard />
     </main>
   );
 }

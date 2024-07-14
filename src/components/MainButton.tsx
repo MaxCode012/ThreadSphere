@@ -9,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const MainButton = ({ children, className, ...props }: ButtonProps) => {
-  const buttonClasses = `disabled:flex disabled:justify-center  disabled:gap-2 dark:bg-main bg-black text-white rounded-md px-10 py-2 hover:shadow-md dark:hover:shadow-shadowCol/60 transition-shadow duration-200 ${className}`;
+  const buttonClasses = `disabled:flex disabled:justify-center  disabled:gap-2 dark:bg-main bg-black text-white rounded-md px-10 py-2  transition-all hover:translate-x-1 duration-200 ${className}`;
 
   const { pending } = useFormStatus();
 

@@ -83,7 +83,7 @@ export async function signin(formData: FormData) {
   return { success: true, message: "Successfully signed in" };
 }
 
-export default async function logout() {
+export async function logout() {
   await destroySession();
   return redirect("/signin");
 }
