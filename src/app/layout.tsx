@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Providers } from "./providers";
 import { Toaster } from "react-hot-toast";
-import { verifyAuth } from "@/lib/lucia";
 
 const lato = Lato({ weight: "400", subsets: ["latin"] });
 

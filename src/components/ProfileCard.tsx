@@ -36,7 +36,12 @@ export default async function ProfileCard() {
         <div className="space-y-3 pb-3">
           {user ? (
             <>
-              <MainButton className="w-full">Edit profile</MainButton>
+              <Link
+                href="/edit-profile"
+                className="w-full block text-center disabled:flex disabled:justify-center  disabled:gap-2 dark:bg-main bg-black text-white rounded-md px-10 py-2  transition-all hover:translate-x-1 duration-200"
+              >
+                Edit profile
+              </Link>
               <LogoutButton />
             </>
           ) : (
